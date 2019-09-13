@@ -1,0 +1,3 @@
+const YELP_KEY = 'IdRCoQxoClmEbejSAefgQhqCkRrSRxoZotZBTYmsU1wAEhRt_Zd0mU0QiyihxQleNrSREsQJ6gjN2XqaBml_oIX5C-qISJGQsFCrRPzFQysrXrSTMABQ2wU9LlN5XXYx'
+
+export default YELP_KEY
