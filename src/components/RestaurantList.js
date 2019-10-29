@@ -1,7 +1,7 @@
 import React from 'react'
 import RestaurantItem from './RestaurantItem'
 
-const RestaurantList = ({ restaurants }) => {
+const RestaurantList = ({ restaurants, errorMessage }) => {
     const renderedList = restaurants.map(restaurant => {
         return (
             <RestaurantItem

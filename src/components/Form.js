@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
 
 const Form = (props) => {
-    const [location, setLocation] = useState('')
+    const [selectedLocation, setSelectedLocation] = useState('')
     const [category, setCategory] = useState('')
+    //const [price, setPrice] = useState('')
 
-    const onLocationChange = event => {
-        setLocation(event.target.value)
+    const onSelectedLocationChange = event => {
+        setSelectedLocation(event.target.value)
     }
 
     const onCategoryChange = event => {
@@ -14,30 +15,47 @@ const Form = (props) => {
 
     const onFormSubmit = event => {
         event.preventDefault()
-        props.onSearch(location, category)
+        props.onSearch(selectedLocation, category)
     }
 
     return (
         <form onSubmit={onFormSubmit}>
             <fieldset>
-                <input
-                    onChange={onLocationChange}
-                    type="text"
-                    value={location}
-                    aria-label="Enter Your Location"
-                    placeholder="Enter Your Location..."
-                />
+                <label>
+                    Pick a location to use:
+                    <input
+                        onChange={onSelectedLocationChange}
+                        type="text"
+                        value={selectedLocation}
+                        aria-label="Location"
+                        placeholder="e.g. New Orleans, LA"
+                    />
+                </label>
 
-                <input
-                    onChange={onCategoryChange}
-                    type="text"
-                    value={category}
-                    aria-label="What would you like to eat?"
-                    placeholder="What would you like to eat?"
-                />
+                <p>Or...</p>
+
+                <label>
+                    Use current location:
+                    <input
+                        type="checkbox"
+                    // isChecked="false"
+                    // value={false}
+                    />
+                </label>
+
+                <label>
+                    Pick a search term or food category!
+                    <input
+                        onChange={onCategoryChange}
+                        type="text"
+                        value={category}
+                        aria-label="What would you like to eat?"
+                        placeholder="What would you like to eat?"
+                    />
+                </label>
             </fieldset>
 
-            <button type="submit">Submit</button>
+            <button>Submit</button>
         </form>
     )
 }
